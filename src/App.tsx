@@ -1,25 +1,27 @@
 import './App.css';
-import Greet from './components/Greet';
-import Names from './components/Names';
-import Person from './components/Person';
-
-const name = {
-  firstName: 'Ahsan',
-  secondName: 'Mumtaz',
-};
-
-const studentNames = [
-  { firstName: 'Ahsan', secondName: 'Mumtaz' },
-  { firstName: 'Bilal', secondName: 'Tahir' },
-  { firstName: 'Usman', secondName: 'Ghafoor' },
-];
+import Button from './components/Button';
+import Heading from './components/Heading';
+import Optional from './components/Optional';
+import Product from './components/Product';
+import Status from './components/Status';
+import Styling from './components/Styling';
 
 function App() {
+  const handleClick = () => {
+    console.log('Hii');
+  };
   return (
     <div className='App'>
-      <Greet name='Ahsan' messages={0} isLoggedIn />
-      <Person fullName={name} />
-      <Names studentNames={studentNames} />
+      <Status status='success' />
+      <Optional price={4} />
+      <Heading>This is heading</Heading>
+      <Product>
+        <Heading>This is product Heading</Heading>
+      </Product>
+      <Button handleClick={handleClick} />
+      <Styling
+        styles={{ border: '2px solid black', padding: '1rem', display: 'flex' }}
+      />
     </div>
   );
 }
